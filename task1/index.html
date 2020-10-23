@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+  <div>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="sidebar__logo">
+          <a href="/" class="logo-mini simple-text">
+            <div class="sidebar__logo-img">
+              <img src="img/logo.png" alt="Optisource Logo">
+            </div>
+          </a>
+          <a href="/" class="simple-text sidebar__logo-text"> 
+            Invoice Generator
+          </a>
+        </div>
+        <div class="sidebar__menu">
+          <div class="container-scroll">
+            <div class="sidebar__user">
+              <div class="sidebar__user-photo">
+                <img src="img/placeholder.jpg" alt="Logo">
+              </div>
+
+              <div class="sidebar__user-info">
+                <p>Optisource Admin</p>
+              </div>
+            </div>
+
+            <ul class="nav">
+              <li>
+                <a href="/" class="nav-link">
+                  <i class="fas fa-file-invoice"></i>
+                  <p class="nav-text">Invoices</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-panel">
+        <nav class="navbar top-navbar">
+          <div class="navbar-container">
+            <div class="top-navbar__minimize">
+              <button class="btn">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+            </div>
+
+            <div class="navbar-brand align-center">
+              <a class="navbar-header">
+                Invoice Generator
+              </a>
+
+              <a
+                role="button"
+                @click="toggle"
+                class="navbar-burger burger"
+                aria-label="menu"
+                aria-expanded="false"
+              >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+
+            <div class="navbar-right">
+              <ul class="nav is-flex">
+                <li>
+                  <a href="/">
+                    <i class="fas fa-file-invoice btn-magnify"></i>
+                    Invoices
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="custom-section page">
+          <div class="container">
+            <div class="page-top__buttons">      
+              <button class="button add-button add-button-drop hide-tablet" onclick="save()">
+                Save
+              </button>
+            </div>
+
+            <div class="invoice__add">
+              <div class="collapse collapse-top">
+                <div class="collapse-trigger">
+                  <div role="button" class="is-flex space-btwn invoice__add-button invoice__add-button-open">
+                    <h3 class="page__collapse-heading">Logo, title, business and contact details</h3> 
+                    <span class="icon"><i class="fas fa-chevron-up"></i></span>
+                  </div>
+                </div>
+                <div id="" aria-expanded="true" class="collapse-content">
+                  <div class="invoice__add-top">
+                    <div class="has-text-centered margin-bottom">
+                      <div class="background h-200 image-contain w-200 margin-bottom-1" style="background-image: url('img/logo.png');">
+                      </div>
+                    </div> 
+                    <div>
+                      <div class="field"> 
+                        <div class="control is-medium is-expanded is-clearfix" aria-required="true" aria-invalid="false">
+                          <input type="text" autocomplete="on" name="title" placeholder="Invoice Title" class="input is-medium">
+                        </div> 
+                      </div> 
+                      <div class="field"> 
+                        <div class="control is-expanded is-clearfix">
+                          <input type="text" autocomplete="on" name="summary" placeholder="Summary or invoice description" class="input">
+                        </div> 
+                      </div> 
+                      <p><strong>Optisource Technologies</strong></p>
+                      <p>128 Cannon Workshops, Cannon Drive</p>
+                      <p><span>London </span>E14 4AS</p>
+                      <p>United Kingdom</p>
+                      <p>0800-010-6049</p>
+                      <p></p>
+                      <p>https://www.optisourcetech.com/</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="invoice__add-content">
+                <div class="invoice__add-content-top">
+                  <div>
+                    <button class="add-customer margin-bottom">
+                      <i class="fas fa-user"></i> <span>Add new client</span>
+                    </button>
+                  </div>
+
+                  <div>
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Client</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded">
+                            <span class="select">
+                              <select name="client"> 
+                                <option value="Kazeem">
+                                  Kazeeem
+                                </option>
+                                <option value="Abayomi">
+                                  Abayomi
+                                </option>
+                                <option value="Onisarotu">
+                                  Onisarotu
+                                </option>
+                                <option value="Optisource">
+                                  Optisource
+                                </option>
+                              </select>
+                            </span> 
+                          </div> 
+                        </div>
+                      </div> 
+                    </div>
+                    
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Invoice no</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded is-clearfix" aria-required="true" aria-invalid="false">
+                            <input type="text" autocomplete="on" name="invoice no" class="input">   
+                          </div> 
+                        </div>
+                      </div> 
+                    </div>
+                    
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Order Number</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded is-clearfix">
+                            <input type="text" autocomplete="on" name="order no" class="input">   
+                          </div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Sales Agent</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded is-clearfix">
+                            <input type="text" autocomplete="on" name="sales agent" class="input">   
+                          </div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Invoice date</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control is-expanded is-clearfix">
+                            <input type="date" autocomplete="off" name="invoice date" class="input">
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Delivery date</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded is-clearfix">
+                            <input type="date" autocomplete="off" name="delivery date" class="input">
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label class="label">Settle date</label>
+                      </div> 
+                      <div class="field-body">
+                        <div class="field"> 
+                          <div class="control is-expanded is-clearfix">
+                            <input type="date" autocomplete="off" name="settle date" class="input">
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+
+                <div class="invoice__add-content-body">
+                  <div class="add-item">
+                    <button class="button-link">
+                      <i class="fas fa-plus-circle"></i>
+                      Add an item
+                  </button>
+                </div>
+                  <div class="invoice__total">
+                    <div class="invoice__total-div">
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">VAT</label>
+                        </div> 
+                        <div class="field-body">
+                          <div class="field"> 
+                            <div class="control is-expanded">
+                              <span class="select">
+                                <select name="vat"> 
+                                  <option value="2">
+                                    2%
+                                  </option>
+                                  <option value="5">
+                                    5%
+                                  </option>
+                                  <option value="7.5">
+                                    7.5%
+                                  </option>
+                                  <option value="10">
+                                    10%
+                                  </option>
+                                  <option value="20">
+                                    20%
+                                  </option>
+                                </select>
+                              </span> 
+                            </div> 
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+
+                    <div class="invoice__total-div">
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">Exchange</label>
+                        </div> 
+                        <div class="field-body">
+                          <div class="field"> 
+                            <div class="control is-expanded">
+                              <span class="select">
+                                <select name="exchange"> 
+                                  <option value="100">
+                                    100
+                                  </option>
+                                  <option value="200">
+                                    200
+                                  </option>
+                                  <option value="300">
+                                    300
+                                  </option>
+                                  <option value="400">
+                                    400
+                                  </option>
+                                  <option value="500">
+                                    500
+                                  </option>
+                                </select>
+                              </span> 
+                            </div> 
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+
+                    <div class="invoice__total-div">
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">Currency</label>
+                        </div> 
+                        <div class="field-body">
+                          <div class="field"> 
+                            <div class="control is-expanded">
+                              <span class="select">
+                                <select name="currency"> 
+                                  <option value="₦">
+                                    NGN Nigerian Naira
+                                  </option>
+                                  <option value="$">
+                                    USD US Dollar
+                                  </option>
+                                  <option value="£">
+                                    GBP British Pound Sterling
+                                  </option>
+                                  <option value="€">
+                                    EUR Euro
+                                  </option>
+                                  <option value="CA$">
+                                    CAD Canadian Dollar
+                                  </option>
+                                  <option value="GH₵">
+                                    GHS Ghanaian Cedi
+                                  </option>
+                                  <option value="AED">
+                                    AED United Arab Emirates Dirham
+                                  </option>
+                                  <option value="CN¥">
+                                    CNY Chinese Yuan
+                                  </option>
+                                  <option value="Rs">
+                                    INR Indian Rupee
+                                  </option>
+                                  <option value="R">
+                                    ZAR South African Rand
+                                  </option>
+                                </select>
+                              </span> 
+                            </div> 
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+
+                    <div class="invoice__total-div">
+                      <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                          <label class="label">Amount</label>
+                        </div> 
+                        <div class="field-body">
+                          <div class="field"> 
+                            <div class="control is-expanded is-clearfix">
+                              <input type="text" autocomplete="on" name="amount" class="input">   
+                            </div> 
+                          </div>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+
+                  <div class="invoice__notes">
+                    <p class="invoice__notes-heading">Notes</p> 
+                    <div class="field">
+                      <div class="control is-expanded is-clearfix">
+                        <textarea name="address" rows="4" class="textarea"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function save() {
+      if(alert("Invoice saved!")) {
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
