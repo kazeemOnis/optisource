@@ -1,0 +1,23 @@
+{
+  "name": "optisource",
+  "version": "1.0.0",
+  "description": "Optisourcetech take home assingment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch styles -o styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazeemOnis/optisource.git"
+  },
+  "author": "Kazeem Onisarotu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kazeemOnis/optisource/issues"
+  },
+  "homepage": "https://github.com/kazeemOnis/optisource#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
