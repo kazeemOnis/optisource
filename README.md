@@ -7,5 +7,5 @@ Optisorce technologies take home assignment
 - open `index.html`
 
 ## Task 2
-- To run task 2 `cd` into the task 2
+- To run task 2 `cd` into the task2 directory
 - run `npm run start`
